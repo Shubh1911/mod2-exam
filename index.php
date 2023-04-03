@@ -1,35 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-    <link rel="stylesheet" href="css/style.css">
+<?php
+echo 'Requested URL="'.$_SERVER['QUERY_STRING'].'"';
+include 'apps/view/header.php';
+$server=$_SERVER['REQUEST_URI'];
+switch($server)
+{
 
-<head>
-</head>
-<body>
-    <!-- section -->
-    <section class="section">
-        <!-- container -->
-        <div class="container">
-            <div class="main">
-                <!-- cards -->
-            <div class="cards">
-           <div class="card"><h2>Available slots</h2>
-        <button><a href="html/slots.php">view </a></button>
-        </div>
-            <div class="card"><h2>Ticket Summary</h2>
-            <button><a href="html/display.php">view </a></button>
-            </div>
-            <div class="card"><h2>Generate Ticket</h2>
-            <button><a href="/html/generate.php">view </a></button>
-            </div>
-            <div class="card"><h2>Release sloat</h2>
-            <button><a href="html/release.php">view </a></button>
-            </div>
-            </div>
-            <!-- cards end -->
-</div>
-        </div>
-        <!-- container ends -->
-    </section>
-    <!-- section ends -->
-</body>
-</html>
+ case"/available":
+    include 'apps/view/available.html';
+    break;
+    case "/generate":
+        include 'apps/view/generate.html';
+        break;
+    case"/release";
+    include 'apps/view/release.html';
+    break;
+    case"/tickets";
+    include 'apps/view/tickets.html';
+    break;
+}
+?>
+
+
+
+
+
