@@ -1,4 +1,5 @@
 <?php
+
 include '../model/ParkingModel.php';
 
 $obj=new ParkingLotModel();
